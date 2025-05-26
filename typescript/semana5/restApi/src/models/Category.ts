@@ -12,3 +12,5 @@ export class Category {
   @ManyToMany(() => Flashcard, flashcard => flashcard.categories)
   flashcards: Flashcard[];
 } 
+
+

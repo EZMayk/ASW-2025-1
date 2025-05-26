@@ -4,6 +4,9 @@ import { AppDataSource, initializeDatabase } from './database/database';
 import flashcardRoutes from './routes/flashcardRoutes';
 import categoryRoutes from './routes/categoryRoutes';
 import flashcardViewRoutes from './routes/flashcardViewRoutes';
+import seriesRoutes  from './routes/serieRoutes'; // Import series routes
+
+
 // Import routes here when they are created
 // import flashcardRoutes from './routes/flashcardRoutes';
 
@@ -21,8 +24,9 @@ export async function initializeApp(): Promise<Express> {
   app.use('/api/flashcards', flashcardRoutes);
   app.use('/api/categories', categoryRoutes);
   app.use('/api/flashcard-views', flashcardViewRoutes);
+  app.use('/api/series', seriesRoutes); // Register series routes
   console.log('Routes registered successfully');
-
+  
   try {
     await initializeDatabase();
   } catch (error) {
